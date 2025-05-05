@@ -3,8 +3,8 @@ import CompanyProfileCardsSection from '@/components/company-profile-cards-secti
 
 export default function Home() {
   return (
-    <main className='flex h-[100dvh] w-[100dvw] flex-col items-center justify-center gap-y-24'>
-      <section className='flex flex-col items-center justify-center gap-y-8'>
+    <main className='flex h-[100dvh] w-[100dvw] flex-col items-center justify-start gap-y-24'>
+      <section className='mt-80 flex flex-col items-center justify-center gap-y-8'>
         <div className='flex w-full flex-col items-center justify-center'>
           <h1 className='bg-gradient-to-br from-neutral-900 via-neutral-900 to-emerald-500 bg-clip-text text-4xl font-bold text-transparent'>
             Company Profile AI
