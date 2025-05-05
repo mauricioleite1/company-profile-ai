@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <div>Company Profile AI</div>
+    <main className='flex h-[100dvh] w-[100dvw] items-center justify-center'>
+      Company Profile AI
+    </main>
   );
 }
