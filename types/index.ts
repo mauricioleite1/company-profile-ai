@@ -1,3 +1,7 @@
+export interface IProfile {
+  profile: ICompany;
+}
+
 export interface ICompany {
   company_name: string;
   service_line: string;
@@ -7,3 +11,5 @@ export interface ICompany {
   emails: string;
   poc: string;
 }
+
+export type IHttpProtocol = 'https://' | 'http://';
