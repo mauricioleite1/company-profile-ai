@@ -8,17 +8,16 @@ export default function Home() {
       <section className='mt-80 flex flex-col items-center justify-center gap-y-10'>
         <div className='flex w-full flex-col items-center justify-center'>
           <h1 className='bg-gradient-to-br from-neutral-900 via-neutral-900 to-emerald-500 bg-clip-text text-4xl font-bold text-transparent'>
-            Company Profile AI
+            Company Profile
           </h1>
 
           <p className='text-neutral-400'>
-            A company profile generator powered by AI
+            AI-driven insights from company websites.
           </p>
         </div>
         <CompanyInput />
 
-        <div className='flex items-center justify-center gap-x-2 text-neutral-400'>
-          <p className='text-xs'>Try out</p>
+        <div className='flex items-center justify-center gap-2 text-neutral-400'>
           <div className='flex items-center justify-center gap-x-2'>
             <InputShortcut text='www.mccarren.ai' />
             <InputShortcut text='www.google.com' />

@@ -1,52 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { ArrowRight, ChevronDown, Loader } from 'lucide-react';
+import clsx from 'clsx';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-import clsx from 'clsx';
+import useInput from '@/hooks/use-input';
 import useInputStore from '@/stores/use-input-store';
-
-const protocols = ['https://', 'http://'] as const;
+import { protocols } from '@/lib/utils';
+import { IHttpProtocol } from '@/types';
 
 export default function CompanyInput() {
-  const [protocol, setProtocol] = useState<'https://' | 'http://'>('https://');
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const { domain, setDomain } = useInputStore();
-
-  const handleInputChange = (raw: string) => {
-    const lower = raw.toLowerCase();
-
-    if (lower.startsWith('https://')) {
-      setProtocol('https://');
-      setDomain(raw.replace(/^https?:\/\//, ''));
-    } else if (lower.startsWith('http://')) {
-      setProtocol('http://');
-      setDomain(raw.replace(/^https?:\/\//, ''));
-    } else {
-      setDomain(raw);
-    }
-  };
-
-  const fullUrl = `${protocol}${domain}`;
-
-  const isValidUrl = () => {
-    try {
-      new URL(`${protocol}${domain}`);
-      return true;
-    } catch {
-      return false;
-    }
-  };
-
-  const handleSubmit = () => {
-    if (!isValidUrl()) return;
-    setIsSubmitting(true);
-    console.log('Enviando URL:', fullUrl);
-    setTimeout(() => setIsSubmitting(false), 1000);
-  };
+  const {
+    protocol,
+    setProtocol,
+    isOpen,
+    setIsOpen,
+    isPending,
+    handleInputChange,
+    handleSubmit,
+    isValidUrl,
+  } = useInput();
+  const { domain } = useInputStore();
 
   return (
     <div className='relative w-140 min-w-100'>
@@ -61,7 +35,7 @@ export default function CompanyInput() {
 
         {isOpen && (
           <div className='bg-popover absolute left-0 mt-1 w-max rounded-md border shadow-md'>
-            {protocols.map((p) => (
+            {protocols.map((p: IHttpProtocol) => (
               <div
                 key={p}
                 onClick={() => {
@@ -85,15 +59,20 @@ export default function CompanyInput() {
         type='text'
         value={domain}
         onChange={(e) => handleInputChange(e.target.value)}
-        className='bg-input pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            return handleSubmit();
+          }
+        }}
+        className='bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
       />
 
       <Button
         onClick={handleSubmit}
-        disabled={!isValidUrl() || isSubmitting}
+        disabled={!isValidUrl() || isPending}
         className='absolute top-1/2 right-2 w-12 -translate-y-1/2 bg-emerald-400 text-white ease-in-out hover:bg-emerald-500/80 disabled:cursor-not-allowed disabled:opacity-50'
       >
-        <ArrowRight />
+        {!isPending ? <ArrowRight /> : <Loader className='animate-spin' />}
       </Button>
     </div>
   );
