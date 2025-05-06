@@ -1,14 +1,16 @@
+import { ICompany } from '@/types';
 import { create } from 'zustand';
-import { ICompany } from '@/types/company';
 
-interface DataStore {
+type State = {
   data: ICompany[];
-  setData: (data: ICompany[]) => void;
-}
+  setData: (companies: ICompany[]) => void;
+  addCompany: (company: ICompany) => void;
+};
 
-const useDataStore = create<DataStore>((set) => ({
+const useDataStore = create<State>((set) => ({
   data: [],
-  setData: (data) => set(() => ({ data })),
+  setData: (companies) => set({ data: companies }),
+  addCompany: (company) => set((state) => ({ data: [...state.data, company] })),
 }));
 
 export default useDataStore;
