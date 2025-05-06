@@ -3,7 +3,7 @@ import CompanyProfileInputSection from '@/components/company-profile-input-secti
 
 export default function Home() {
   return (
-    <main className='flex h-[100dvh] w-[100dvw] flex-col items-center justify-start gap-y-24'>
+    <main className='flex h-[100dvh] w-[100dvw] flex-col items-center justify-start gap-y-24 px-4'>
       <CompanyProfileInputSection />
       <CompanyProfileCardsSection />
     </main>

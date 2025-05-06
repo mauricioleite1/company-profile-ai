@@ -27,7 +27,7 @@ export default function CompanyInput() {
   const { domain } = useInputStore();
 
   return (
-    <div className='relative w-140 min-w-100'>
+    <div className='relative w-full max-w-140 min-w-80 md:min-w-100'>
       <div className='absolute top-1/2 left-2 z-10 -translate-y-1/2'>
         <div
           onClick={() => setIsOpen((prev) => !prev)}
