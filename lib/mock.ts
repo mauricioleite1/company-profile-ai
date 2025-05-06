@@ -22,8 +22,8 @@ export const mock = [
       'private sector opportunities',
       'AWS deployment',
     ],
-    emails: '',
-    poc: '',
+    emails: 'email@email.br',
+    poc: 'poc',
   },
   {
     company_name: 'OpenAI',
