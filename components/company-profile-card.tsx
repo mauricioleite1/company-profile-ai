@@ -1,6 +1,7 @@
 import { ICompany } from '@/types/company';
 import CompanyProfileCardKeywords from '@/components/company-profile-card-keywords';
 import { Globe } from 'lucide-react';
+import CompanyProfileCardServiceLine from '@/components/company-profile-card-service-line';
 
 interface CompanyProfileCardProps {
   company: ICompany;
@@ -10,7 +11,7 @@ export default function CompanyProfileCard({
   company,
 }: CompanyProfileCardProps) {
   return (
-    <div className='bg-card flex h-100 min-w-150 flex-1 flex-col items-center justify-between gap-y-4 rounded-lg p-4 shadow'>
+    <div className='bg-card flex h-120 min-w-150 flex-1 flex-col items-center justify-between gap-y-4 rounded-lg p-4 shadow'>
       <header className='flex w-full flex-col items-start justify-start'>
         <div className='flex w-full flex-col items-start justify-start gap-2'>
           <div className='flex flex-col items-start justify-start gap-y-2'>
@@ -27,6 +28,9 @@ export default function CompanyProfileCard({
           </p>
         </div>
       </header>
+      <hr className='' />
+      <CompanyProfileCardServiceLine serviceLine={company.service_line} />
+
       <footer className='w-full'>
         <CompanyProfileCardKeywords company={company} />
       </footer>

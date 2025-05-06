@@ -25,33 +25,33 @@ export const mock = [
     emails: '',
     poc: '',
   },
-  // {
-  //   company_name: 'OpenAI',
-  //   service_line:
-  //     'Artificial intelligence research and deployment, large language models, generative AI tools, AI APIs, enterprise AI solutions',
-  //   company_description:
-  //     'OpenAI is an American artificial intelligence research organization founded in December 2015 and headquartered in San Francisco, California. Its mission is to ensure that artificial general intelligence benefits all of humanity. OpenAI is known for developing advanced AI models such as the GPT series, DALL·E, and ChatGPT, and offers these technologies through APIs and applications to individuals and enterprises worldwide.',
-  //   tier1_keywords: [
-  //     'artificial intelligence',
-  //     'large language models',
-  //     'generative AI',
-  //     'AI research',
-  //     'machine learning',
-  //     'AI deployment',
-  //   ],
-  //   tier2_keywords: [
-  //     'GPT-4',
-  //     'ChatGPT',
-  //     'DALL·E',
-  //     'OpenAI API',
-  //     'AI safety',
-  //     'public benefit corporation',
-  //     'Microsoft partnership',
-  //     'enterprise AI solutions',
-  //   ],
-  //   emails: '',
-  //   poc: '',
-  // },
+  {
+    company_name: 'OpenAI',
+    service_line:
+      'Artificial intelligence research and deployment, large language models, generative AI tools, AI APIs, enterprise AI solutions',
+    company_description:
+      'OpenAI is an American artificial intelligence research organization founded in December 2015 and headquartered in San Francisco, California. Its mission is to ensure that artificial general intelligence benefits all of humanity. OpenAI is known for developing advanced AI models such as the GPT series, DALL·E, and ChatGPT, and offers these technologies through APIs and applications to individuals and enterprises worldwide.',
+    tier1_keywords: [
+      'artificial intelligence',
+      'large language models',
+      'generative AI',
+      'AI research',
+      'machine learning',
+      'AI deployment',
+    ],
+    tier2_keywords: [
+      'GPT-4',
+      'ChatGPT',
+      'DALL·E',
+      'OpenAI API',
+      'AI safety',
+      'public benefit corporation',
+      'Microsoft partnership',
+      'enterprise AI solutions',
+    ],
+    emails: '',
+    poc: '',
+  },
   // {
   //   company_name: 'Dasa (Diagnósticos da América S.A.)',
   //   service_line:
