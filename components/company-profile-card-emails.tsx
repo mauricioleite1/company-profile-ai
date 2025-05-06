@@ -63,7 +63,7 @@ export default function CompanyProfileCardEmails({
     );
 
     if (alreadyExists) {
-      setError('Este e-mail já foi adicionado.');
+      setError('Please try again using another e-mail address.');
       return;
     }
 

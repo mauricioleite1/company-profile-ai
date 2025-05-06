@@ -1,4 +1,4 @@
-import { ICompany } from '@/types/company';
+import { ICompany } from '@/types';
 import CompanyProfileCardKeywords from '@/components/company-profile-card-keywords';
 import { Globe } from 'lucide-react';
 import CompanyProfileCardServiceLine from '@/components/company-profile-card-service-line';

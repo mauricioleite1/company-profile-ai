@@ -1,4 +1,4 @@
-import { ICompany } from '@/types/company';
+import { ICompany } from '@/types';
 
 interface CompanyProfileCardKeywordsProps {
   company: ICompany;
