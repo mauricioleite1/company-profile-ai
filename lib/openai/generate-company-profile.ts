@@ -1,6 +1,9 @@
 import { openai } from '@/lib/openai';
+import { ICompany } from '@/types';
 
-export async function generateCompanyProfile(website: string): Promise<any> {
+export async function generateCompanyProfile(
+  website: string,
+): Promise<ICompany | null> {
   const content = `You are an assistant that analyzes company websites and generates a structured profile.  
 
 Based on the website below, return a JSON object with the following structure only:
