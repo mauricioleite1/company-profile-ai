@@ -8,7 +8,7 @@ interface InputShortcutProps {
 }
 
 export default function InputShortcut({ text }: InputShortcutProps) {
-  const { domain, setDomain } = useInputStore();
+  const { setDomain } = useInputStore();
 
   const handleClick = () => {
     setDomain(text);
