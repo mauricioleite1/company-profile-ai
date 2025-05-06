@@ -2,15 +2,18 @@
 
 import { ArrowRight, ChevronDown, Loader } from 'lucide-react';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { cn, protocols } from '@/lib/utils';
 import useInput from '@/hooks/use-input';
 import useInputStore from '@/stores/use-input-store';
-import { protocols } from '@/lib/utils';
 import { IHttpProtocol } from '@/types';
+import { fadeInAlternative } from '@/lib/motion';
 
 export default function CompanyInput() {
   const {
+    error,
     protocol,
     setProtocol,
     isOpen,
@@ -20,6 +23,7 @@ export default function CompanyInput() {
     handleSubmit,
     isValidUrl,
   } = useInput();
+
   const { domain } = useInputStore();
 
   return (
@@ -64,16 +68,27 @@ export default function CompanyInput() {
             return handleSubmit();
           }
         }}
-        className='bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
+        className={cn(
+          'bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200',
+          error &&
+            'border-rose-300 hover:border-rose-200 focus-visible:border-rose-300',
+        )}
       />
+      <span className='absolute -bottom-4 text-xs text-rose-400'>{error}</span>
 
-      <Button
-        onClick={handleSubmit}
-        disabled={!isValidUrl() || isPending}
-        className='absolute top-1/2 right-2 w-12 -translate-y-1/2 bg-emerald-400 text-white ease-in-out hover:bg-emerald-500/80 disabled:cursor-not-allowed disabled:opacity-50'
+      <motion.div
+        variants={fadeInAlternative}
+        initial='hidden'
+        animate='visible'
       >
-        {!isPending ? <ArrowRight /> : <Loader className='animate-spin' />}
-      </Button>
+        <Button
+          onClick={handleSubmit}
+          disabled={!isValidUrl() || isPending}
+          className='absolute top-1/2 right-2 w-12 -translate-y-1/2 bg-emerald-400 text-white ease-in-out hover:bg-emerald-500/80 disabled:cursor-not-allowed disabled:opacity-50'
+        >
+          {!isPending ? <ArrowRight /> : <Loader className='animate-spin' />}
+        </Button>
+      </motion.div>
     </div>
   );
 }
