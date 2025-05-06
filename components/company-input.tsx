@@ -5,14 +5,16 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import clsx from 'clsx';
+import useInputStore from '@/stores/use-input-store';
 
 const protocols = ['https://', 'http://'] as const;
 
 export default function CompanyInput() {
   const [protocol, setProtocol] = useState<'https://' | 'http://'>('https://');
-  const [domain, setDomain] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const { domain, setDomain } = useInputStore();
 
   const handleInputChange = (raw: string) => {
     const lower = raw.toLowerCase();
@@ -48,7 +50,6 @@ export default function CompanyInput() {
 
   return (
     <div className='relative w-140 min-w-100'>
-      {/* Protocol selector */}
       <div className='absolute top-1/2 left-2 z-10 -translate-y-1/2'>
         <div
           onClick={() => setIsOpen((prev) => !prev)}
@@ -79,7 +80,6 @@ export default function CompanyInput() {
         )}
       </div>
 
-      {/* Domain input */}
       <Input
         placeholder='mccarren.ai'
         type='text'
@@ -88,7 +88,6 @@ export default function CompanyInput() {
         className='bg-input pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
       />
 
-      {/* Submit button */}
       <Button
         onClick={handleSubmit}
         disabled={!isValidUrl() || isSubmitting}
