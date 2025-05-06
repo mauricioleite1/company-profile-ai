@@ -4,14 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { PlusCircle, X } from 'lucide-react';
-import { z } from 'zod';
+import { emailSchema } from '@/lib/validation';
 
 interface CompanyProfileCardEmailsProps {
   emails: string;
   poc: string;
 }
-
-const emailSchema = z.string().email('Please insert a valid e-mail address');
 
 export default function CompanyProfileCardEmails({
   emails,

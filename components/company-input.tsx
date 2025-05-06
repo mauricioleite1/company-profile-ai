@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { protocols } from '@/lib/utils';
+import { cn, protocols } from '@/lib/utils';
 import useInput from '@/hooks/use-input';
 import useInputStore from '@/stores/use-input-store';
 import { IHttpProtocol } from '@/types';
@@ -13,6 +13,7 @@ import { fadeInAlternative } from '@/lib/motion';
 
 export default function CompanyInput() {
   const {
+    error,
     protocol,
     setProtocol,
     isOpen,
@@ -67,8 +68,13 @@ export default function CompanyInput() {
             return handleSubmit();
           }
         }}
-        className='bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
+        className={cn(
+          'bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200',
+          error &&
+            'border-rose-300 hover:border-rose-200 focus-visible:border-rose-300',
+        )}
       />
+      <span className='absolute -bottom-4 text-xs text-rose-400'>{error}</span>
 
       <motion.div
         variants={fadeInAlternative}
