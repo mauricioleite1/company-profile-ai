@@ -13,7 +13,7 @@ export default function InputShortcut({ text }: InputShortcutProps) {
 
   return (
     <Button
-      className='bg-background border border-emerald-300 text-neutral-600 hover:-translate-y-[2px] hover:bg-transparent hover:shadow'
+      className='bg-background w-full border border-emerald-300 text-neutral-600 hover:-translate-y-[2px] hover:bg-transparent hover:shadow md:w-auto'
       onClick={handleClick}
     >
       <Component size={18} className='text-neutral-800' />
