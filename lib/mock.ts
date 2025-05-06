@@ -1,5 +1,31 @@
 export const mock = [
   {
+    company_name: 'McCarren AI',
+    service_line:
+      'AI-powered proposal automation, RFP response generation, opportunity qualification, knowledge management, enterprise AI agents',
+    company_description:
+      'McCarren AI is a software company specializing in AI-driven solutions that streamline business development processes. Their platform leverages custom AI agents to generate nuanced and compliant responses to sales requests, RFPs, and questionnaires, enhancing cross-team collaboration and knowledge management. McCarren AI also offers tools for optimizing opportunity matching across public and private markets, ensuring faster and more accurate decision-making.',
+    tier1_keywords: [
+      'AI proposal automation',
+      'RFP response generation',
+      'opportunity qualification',
+      'knowledge management',
+      'enterprise AI agents',
+    ],
+    tier2_keywords: [
+      'sales enablement',
+      'business development automation',
+      'compliance automation',
+      'workflow optimization',
+      'AI-driven knowledge base',
+      'public sector bidding',
+      'private sector opportunities',
+      'AWS deployment',
+    ],
+    emails: '',
+    poc: '',
+  },
+  {
     company_name: 'Dasa (Diagnósticos da América S.A.)',
     service_line:
       'Saúde integrada, medicina diagnóstica, hospitais, genômica, oncologia, telemedicina',
@@ -156,6 +182,33 @@ export const mock = [
       'W1 hypercar',
       'Forseven merger',
       'CYVN Holdings',
+    ],
+    emails: '',
+    poc: '',
+  },
+  {
+    company_name: 'CI&T',
+    service_line:
+      'Transformação digital, desenvolvimento ágil de software, consultoria em tecnologia, experiência do usuário, dados e inteligência artificial',
+    company_description:
+      'A CI&T é uma multinacional brasileira especializada em transformação digital e desenvolvimento de software. Fundada em 1995 por ex-alunos da Unicamp, a empresa atua globalmente, com presença em países como Estados Unidos, Canadá, Reino Unido, Portugal, China, Colômbia, Japão e Austrália. Com mais de 6.000 colaboradores, a CI&T oferece soluções que abrangem desde estratégia tecnológica até experiência do cliente, dados e IA, atendendo diversos setores, incluindo automotivo, financeiro, saúde, varejo e mídia.',
+    tier1_keywords: [
+      'transformação digital',
+      'desenvolvimento ágil',
+      'consultoria em tecnologia',
+      'experiência do usuário',
+      'inteligência artificial',
+      'dados',
+    ],
+    tier2_keywords: [
+      'Lean IT',
+      'engenharia de valor',
+      'plataforma CI&T FLOW',
+      'serviços em nuvem',
+      'UX design',
+      'automação de processos',
+      'parcerias estratégicas',
+      'expansão internacional',
     ],
     emails: '',
     poc: '',
