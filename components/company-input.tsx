@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Loader } from 'lucide-react';
 import clsx from 'clsx';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -59,6 +59,11 @@ export default function CompanyInput() {
         type='text'
         value={domain}
         onChange={(e) => handleInputChange(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            return handleSubmit();
+          }
+        }}
         className='bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
       />
 
@@ -67,7 +72,7 @@ export default function CompanyInput() {
         disabled={!isValidUrl() || isPending}
         className='absolute top-1/2 right-2 w-12 -translate-y-1/2 bg-emerald-400 text-white ease-in-out hover:bg-emerald-500/80 disabled:cursor-not-allowed disabled:opacity-50'
       >
-        <ArrowRight />
+        {!isPending ? <ArrowRight /> : <Loader className='animate-spin' />}
       </Button>
     </div>
   );

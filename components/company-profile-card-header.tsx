@@ -18,9 +18,7 @@ export default function CompanyProfileCardHeader({
         <h3 className='line-clamp-1 text-base font-semibold'>{companyName}</h3>
       </div>
 
-      <p className='line-clamp-3 text-sm text-neutral-400'>
-        {companyDescription}
-      </p>
+      <p className='text-sm text-neutral-400'>{companyDescription}</p>
     </header>
   );
 }

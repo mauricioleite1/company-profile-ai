@@ -1,27 +1,15 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import useInputStore from '@/stores/use-input-store';
 import { Component } from 'lucide-react';
+import useInputShortcut from '@/hooks/use-input-shortcut';
 
 interface InputShortcutProps {
   text: string;
 }
 
 export default function InputShortcut({ text }: InputShortcutProps) {
-  const { setDomain } = useInputStore();
-
-  const handleClick = () => {
-    setDomain(text);
-    const input = document.querySelector(
-      'input[name="company"]',
-    ) as HTMLInputElement;
-    if (input) {
-      input.value = text;
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-      input.focus();
-    }
-  };
+  const { handleClick } = useInputShortcut(text);
 
   return (
     <Button
