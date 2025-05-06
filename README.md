@@ -16,15 +16,14 @@ This is a web application built for a technical challenge.
 
 ## Tech Stack
 
-- [Next.js 15](https://nextjs.org/)
-- [React 19](https://reactjs.org/)
-- [Tailwind CSS 4](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Zustand](https://zustand-demo.pmnd.rs/)
-- [Zod](https://zod.dev/)
-- [OpenAI SDK](https://www.npmjs.com/package/openai)
-- [Lucide Icons](https://lucide.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- **Framework**: [Next.js 15](https://nextjs.org/) & [React 19](https://reactjs.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Validations**: [Zod](https://zod.dev/)
+- **API**: [OpenAI SDK](https://www.npmjs.com/package/openai)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Linting & Formatting**: [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
 
 ## Getting Started
 
