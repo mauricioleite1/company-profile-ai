@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import useInputStore from '@/stores/use-input-store';
+import { Component } from 'lucide-react';
 
 interface InputShortcutProps {
   text: string;
@@ -27,6 +28,8 @@ export default function InputShortcut({ text }: InputShortcutProps) {
       className='bg-background border border-emerald-300 text-neutral-600 hover:-translate-y-[2px] hover:bg-transparent hover:shadow'
       onClick={handleClick}
     >
+      <Component size={18} className='text-neutral-800' />
+
       {text}
     </Button>
   );
