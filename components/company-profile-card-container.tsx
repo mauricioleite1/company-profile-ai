@@ -15,7 +15,7 @@ export default function CompanyProfileCardContainer({
       variants={slideUp}
       initial='hidden'
       animate='visible'
-      className='bg-card flex min-h-120 min-w-150 flex-1 flex-col items-center justify-between gap-y-10 overflow-hidden rounded-lg p-4 shadow transition delay-100 ease-in-out hover:-translate-y-1 hover:shadow-md'
+      className='bg-card flex min-h-120 min-w-full flex-1 flex-col items-center justify-between gap-y-10 overflow-hidden rounded-lg p-4 shadow transition delay-100 ease-in-out hover:-translate-y-1 hover:shadow-md md:min-w-150'
     >
       <CompanyProfileCard.Header
         companyName={company.company_name}

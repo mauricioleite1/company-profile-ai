@@ -7,7 +7,7 @@ const font = Onest({
 });
 
 export const metadata: Metadata = {
-  title: 'Company Profile AI',
+  title: 'Company Profile',
   description: 'A company profile generator powered by AI - Maurício Leite',
 };
 

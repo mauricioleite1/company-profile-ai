@@ -28,13 +28,13 @@ export default function CompanyProfileInputSection() {
         variants={fadeIn}
         initial='hidden'
         animate='visible'
-        className='flex items-center justify-center gap-2 text-neutral-400'
+        className='flex w-full items-center justify-center gap-2 text-neutral-400'
       >
-        <div className='flex flex-col items-center justify-start gap-2'>
+        <div className='flex w-full flex-col items-center justify-start gap-2'>
           <span className='-mb-2 w-full text-left text-xs font-semibold text-emerald-400/60'>
             Experiment with examples
           </span>
-          <div className='flex items-center justify-center gap-x-2'>
+          <div className='flex w-full flex-col items-center justify-center gap-2 md:flex-row'>
             <InputShortcut text='www.mccarren.ai' />
             <InputShortcut text='www.google.com' />
             <InputShortcut text='chatgpt.com' />
