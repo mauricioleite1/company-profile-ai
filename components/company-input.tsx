@@ -59,7 +59,7 @@ export default function CompanyInput() {
         type='text'
         value={domain}
         onChange={(e) => handleInputChange(e.target.value)}
-        className='bg-input pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
+        className='bg-input py-6 pr-32 pl-24 placeholder:text-neutral-300 hover:border-neutral-200 focus-visible:border-neutral-200'
       />
 
       <Button

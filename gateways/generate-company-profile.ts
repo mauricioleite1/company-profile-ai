@@ -13,8 +13,5 @@ export async function generateCompanyProfile(
     throw new Error('Failed to generate company profile');
   }
 
-  const data = response.json();
-  console.log('Response from generateCompanyProfile:', data);
-
-  return data;
+  return response.json();
 }
