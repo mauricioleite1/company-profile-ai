@@ -1,9 +1,6 @@
 'use client';
 
-import { splitByComma } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { Fragment, useState } from 'react';
-import { Plus, PlusCircle } from 'lucide-react';
 
 interface CompanyProfileCardEmailsProps {
   emails: string;
@@ -15,7 +12,6 @@ export default function CompanyProfileCardEmails({
   poc,
 }: CompanyProfileCardEmailsProps) {
   const [showButton, setShowButton] = useState(false);
-  // const processedServiceLineArray = splitByComma(emails);
 
   const handleMouseOver = () => {
     setShowButton(true);
