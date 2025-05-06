@@ -9,7 +9,7 @@ import { protocols } from '@/lib/utils';
 import useInput from '@/hooks/use-input';
 import useInputStore from '@/stores/use-input-store';
 import { IHttpProtocol } from '@/types';
-import { fadeIn, fadeInAlternative } from '@/lib/motion';
+import { fadeInAlternative } from '@/lib/motion';
 
 export default function CompanyInput() {
   const {
@@ -22,6 +22,7 @@ export default function CompanyInput() {
     handleSubmit,
     isValidUrl,
   } = useInput();
+
   const { domain } = useInputStore();
 
   return (
